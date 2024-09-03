@@ -6,3 +6,4 @@ initialy packaged with JSesh, but it's not very convenient: I occasionnaly forge
 
 **No binary distribution of these utilities is planned,** so you will need to install Java to run them.
 
+**Most of them are for my own use**. It means they might use out-of-date or unpublished versions of JSesh. No update or maintainance can be expected.
