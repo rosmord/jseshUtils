@@ -1,0 +1,10 @@
+# jsesh-rtfcleaner
+target
+bin
+build
+.classpath
+.project
+.settings
+.vscode
+.DS_Store
+*~
