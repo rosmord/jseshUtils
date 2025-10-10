@@ -17,8 +17,7 @@ import jsesh.hieroglyphs.graphics.ShapeChar;
 
 
 /**
- * Build an index of the SVG files contained in a directory. Useful for web
- * publication.
+ * Dumps a normalised version of the svg fonts.
  * 
  * Oups. This class is an abomination. I'm ashamed I wrote it. There are statics
  * everywhere.

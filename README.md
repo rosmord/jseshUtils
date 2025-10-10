@@ -1,9 +1,16 @@
-# jseshUtils
-Various small utilities I have made for JSesh (to be moved out from the main codebase)
+# JSesh Utilities
+
+Various small utilities I have made for JSesh.
+
+The purpose of this project is twofold:
+
+1. clear up the code base of JSesh by removing stuff which should not be there
+2. keep track of those utilities.
 
 This project will contain a number of independant softwares using the JSesh libraries. Their code was
 initialy packaged with JSesh, but it's not very convenient: I occasionnaly forget where they are and what they do.
 
 **No binary distribution of these utilities is planned,** so you will need to install Java to run them.
 
-**Most of them are for my own use**. It means they might use out-of-date or unpublished versions of JSesh. No update or maintainance can be expected.
+**Most of them are for my own use**. It means they might use out-of-date or unpublished versions of JSesh. No update or maintainance can be expected. Some of those softwares haven't been used since 2008.
+
