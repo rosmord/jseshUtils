@@ -32,7 +32,6 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import jsesh.graphics.glyphs.model.SVGSignSource;
-import jsesh.hieroglyphs.GardinerCode;
 import jsesh.hieroglyphs.HieroglyphicBitmapBuilder;
 import jsesh.hieroglyphs.ShapeChar;
 import jsesh.utils.FileUtils;

@@ -50,7 +50,7 @@ public class RTFCleaner {
 	public OutputStream out;
 
 	private class SimpleTokenizer {
-		ArrayList currentTokens = new ArrayList();
+		ArrayList<Integer> currentTokens = new ArrayList<>();
 		private int depth = 0;
 		private int imageDepth = -1; // Not in image scope
 		private TokenizerNode currentNode;
