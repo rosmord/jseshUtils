@@ -32,7 +32,7 @@
  * pris connaissance de la licence CeCILL, et que vous en avez accepté les
  * termes.
  */
-package org.qenherkhopeshef.jsesh.codeDumper;
+package org.qenherkhopeshef.jsesh.codedumper;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
