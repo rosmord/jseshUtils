@@ -1,0 +1,89 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building an application
+    id 'application'
+}
+
+// Variable definitions
+ext {
+    jseshVersion = "7.2.0"
+    mainClassName = 'org.qenherkhopeshef.jsesh.codeDumper.Main'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    maven { // JSesh repository
+        url = uri('https://www.qenherkhopeshef.org/maven')
+    }
+    mavenCentral()    
+}
+
+dependencies {
+    // Use JUnit Jupiter for testing.
+    implementation "org.qenherkhopeshef.jsesh:jsesh:$jseshVersion"
+    // implementation "org.qenherkhopeshef.jsesh:jseshGlyphs:$jseshVersion"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+
+}
+
+// Define the main class as a variable, 
+// to use it both in the application plugin (i.e. gradle run)
+// and to create an executable jar file.
+//
+// Uncomment the following to :
+// a) use gradle run to start the software
+// b) build an executable jar
+
+
+application {
+  mainClass = mainClassName
+}
+
+// Jar, storing libraries in an external lib folder.
+
+ jar {
+   manifest {
+     attributes(
+       'Main-Class': mainClassName,
+       'Class-Path': configurations.runtimeClasspath.files.collect { "lib/" + it.getName() }.join(' ')
+     )
+   }
+ }
+
+// Copy dependencies in the lib folder for executable jar 
+ task copyRuntimeLibs(type: Copy) {  
+     into "$buildDir/libs/lib/"
+     from configurations.runtimeClasspath
+ }
+
+// Assembly depends on the copy of runtime libs.
+assemble.dependsOn copyRuntimeLibs
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+task distClean {
+  dependsOn("clean")
+  doLast {
+    delete "bin"
+    delete ".classpath"
+    delete ".gradle"
+    delete ".nb-gradle"
+    delete ".project"
+    delete ".settings"
+    delete ".vscode"
+    delete '.DS_Store'
+    delete '.idea'
+  }
+}

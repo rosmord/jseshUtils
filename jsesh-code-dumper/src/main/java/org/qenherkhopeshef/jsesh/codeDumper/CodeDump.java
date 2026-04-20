@@ -45,7 +45,7 @@ import jsesh.mdc.MDCSyntaxError;
 import jsesh.mdc.file.MDCDocument;
 import jsesh.mdc.file.MDCDocumentReader;
 import jsesh.mdc.model.TopItemList;
-import jsesh.mdc.model.utilities.HieroglyphCodesExtractor;
+import jsesh.mdc.utils.HieroglyphCodesExtractor;
 
 /**
  * Dump the codes from various JSesh files.
@@ -95,7 +95,7 @@ public class CodeDump {
     private List<List<String>> extractCodes(Path sourceFile) throws MDCSyntaxError, IOException {
         MDCDocumentReader documentReader = new MDCDocumentReader();
         MDCDocument doc = documentReader.loadFile(sourceFile.toFile());
-        TopItemList topItemList = doc.getHieroglyphicTextModel().getModel();
+        TopItemList topItemList = doc.getHieroglyphicTextModel().getModel();        
         HieroglyphCodesExtractor codesExtractor = new HieroglyphCodesExtractor(true);
         List<List<String>> lines = codesExtractor.extractHieroglyphLines(topItemList);
         return lines;
